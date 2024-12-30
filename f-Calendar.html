@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Farming Calendar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f4037, #99f2c8);
+      color: #ffffff;
+      padding: 50px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header .header-content {
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .calendar-section {
+      flex-grow: 1;
+      padding: 60px 20px;
+      background-color: #222222;
+    }
+
+    .calendar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #ffcc00;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .month-card {
+      background: #2b2b2b;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .month-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .month-card h3 {
+      font-size: 2.2rem;
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+
+    .month-card p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Modern Farming Calendar</h1>
+      <p>A comprehensive guide for monthly farming activities to enhance productivity and sustainability.</p>
+    </div>
+  </header>
+
+  <!-- Calendar Section -->
+  <section class="calendar-section">
+    <div class="calendar-container">
+      <h2 class="section-title">Farming Activities by Month</h2>
+      <div class="calendar-grid">
+        <!-- Month Cards -->
+        <div class="month-card">
+          <h3>January</h3>
+          <p>
+            - Begin soil testing and prepare for winter crop planting.<br>
+            - Sow barley, wheat, and other winter crops.<br>
+            - Inspect and repair farming tools and equipment.<br>
+            - Prune fruit trees to encourage healthy growth.<br>
+            - Perform pest control and protect seedlings from frost.<br>
+            - Plan irrigation schedules for early spring.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>February</h3>
+          <p>
+            - Continue sowing early spring crops like peas and radishes.<br>
+            - Fertilize the soil to ensure proper nutrient levels.<br>
+            - Begin weed management for early planted crops.<br>
+            - Check greenhouse setups and monitor seedling health.<br>
+            - Plan crop rotations to improve soil health.<br>
+            - Perform regular pest and disease inspections.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>March</h3>
+          <p>
+            - Start sowing summer crops like maize, tomatoes, and beans.<br>
+            - Apply necessary fertilizers to encourage crop growth.<br>
+            - Begin irrigation and ensure adequate soil moisture.<br>
+            - Monitor fields for pests and diseases frequently.<br>
+            - Prune flowering shrubs and trees for higher yields.<br>
+            - Harvest late winter crops like carrots and spinach.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>April</h3>
+          <p>
+            - Focus on planting vegetables like cucumbers, pumpkins, and melons.<br>
+            - Apply mulching to retain soil moisture and reduce weeds.<br>
+            - Maintain irrigation systems for consistent watering.<br>
+            - Fertilize flowering plants for better fruit production.<br>
+            - Monitor temperature changes to protect delicate plants.<br>
+            - Harvest early spring crops as they mature.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>May</h3>
+          <p>
+            - Begin transplanting rice, millet, and other monsoon crops.<br>
+            - Ensure proper drainage systems to handle excess rainwater.<br>
+            - Fertilize fields to prepare for peak growth periods.<br>
+            - Manage pests and diseases with appropriate control measures.<br>
+            - Prune summer fruit-bearing plants like mangoes.<br>
+            - Plan for the upcoming harvest and post-harvest processes.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>June</h3>
+          <p>
+            - Harvest early crops like barley and oats.<br>
+            - Prepare fields for monsoon planting with proper plowing.<br>
+            - Begin sowing crops like maize, cotton, and soybeans.<br>
+            - Regularly inspect irrigation systems for blockages.<br>
+            - Manage weeds and perform pest control as needed.<br>
+            - Store harvested crops in dry and safe conditions.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>July</h3>
+          <p>
+            - Focus on planting paddy, sugarcane, and other monsoon crops.<br>
+            - Monitor water levels in fields to prevent waterlogging.<br>
+            - Fertilize crops during active growth periods.<br>
+            - Remove weeds and prevent pest infestations.<br>
+            - Maintain adequate drainage during heavy rains.<br>
+            - Inspect fruit trees for flowering and potential diseases.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>August</h3>
+          <p>
+            - Weed control in paddy and other monsoon crops.<br>
+            - Harvest early vegetables like cucumbers and gourds.<br>
+            - Inspect fields for pest attacks and apply biocontrol measures.<br>
+            - Begin preparing nurseries for autumn vegetable crops.<br>
+            - Fertilize late-season crops like sugarcane.<br>
+            - Clean irrigation channels to maintain water flow.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>September</h3>
+          <p>
+            - Harvest paddy and early maize crops.<br>
+            - Start planting early winter vegetables like spinach and lettuce.<br>
+            - Prepare soil for the next crop cycle with compost.<br>
+            - Dry and store harvested grains safely.<br>
+            - Prune fruit-bearing plants to promote healthy growth.<br>
+            - Inspect post-harvest storage facilities for pests.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>October</h3>
+          <p>
+            - Plant wheat, mustard, and winter vegetables.<br>
+            - Prepare greenhouses for winter planting.<br>
+            - Harvest summer crops and store grains.<br>
+            - Fertilize the soil for better productivity in winter crops.<br>
+            - Perform pest control to protect seedlings.<br>
+            - Clean and maintain all farming tools and equipment.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>November</h3>
+          <p>
+            - Plant garlic, onions, and root crops like carrots.<br>
+            - Maintain frost protection measures for delicate plants.<br>
+            - Fertilize crops before the onset of peak winter.<br>
+            - Harvest sugarcane and other late summer crops.<br>
+            - Store harvested grains in pest-free areas.<br>
+            - Begin planning for spring planting activities.
+          </p>
+        </div>
+        <div class="month-card">
+          <h3>December</h3>
+          <p>
+            - Inspect crop storage facilities to avoid spoilage.<br>
+            - Harvest late winter crops like broccoli and cabbage.<br>
+            - Test soil for nutrient levels for spring planting.<br>
+            - Prune dormant fruit trees to improve future yields.<br>
+            - Protect greenhouses from extreme cold weather.<br>
+            - Plan the crop rotation cycle for the next year.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

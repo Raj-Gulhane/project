@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Dark Gradient Background */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #333333); /* Dark gradient */
+    color: #ffffff;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 18px; /* Increased base font size */
+}
+
+/* Section Styling */
+.rental-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.85); /* Slightly transparent background for section */
+    border-radius: 12px;
+}
+
+.rental-section h1 {
+    color: #80d0c7;
+    font-family: 'Georgia', serif;
+    font-size: 60px; /* Increased title font size */
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+/* Machine Cards */
+.machine-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px auto;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 255, 170, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.machine-card:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 8px 24px rgba(0, 255, 170, 0.5); */
+}
+
+.machine-card img {
+    margin-left: 5%;
+    width: 33%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+
+.machine-text {
+    width: 60%;
+    padding: 25px;
+    text-align: center;
+}
+
+.machine-text h2 {
+    color: #f7c947; /* Bright yellow for titles */
+    font-size: 42px; /* Increased font size for machine names */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.machine-text p {
+    color: #e0e0e0;
+    font-size: 22px; /* Increased font size for paragraphs */
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Button Styling */
+.btn {
+    margin-top: 2%;
+    background-color: #e91e63;
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 22px; /* Larger button text */
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #ff4081;
+    transform: translateY(-3px);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #222222;
+    color: #ffffff;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+    text-align: center;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4081;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #28a745;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .machine-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .machine-card img {
+        width: 80%;
+        height: 200px;
+    }
+
+    .machine-text {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}

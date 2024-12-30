@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Farming</title>
+    <link rel="stylesheet" href="f-types.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Black background */
+            color: #f1f1f1; /* Light text color for contrast */
+            overflow-x: hidden;
+        }
+
+        h1, h2, p {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out; /* Title fade-in animation */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            color: #f1f1f1;
+            margin: 0 20px;
+        }
+
+        /* Animation for Title */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Farming Section Styles */
+        .farming-section {
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Slight dark overlay */
+            text-align: center;
+            animation: fadeIn 2s ease-in-out; /* Section fade-in animation */
+        }
+
+        /* Farming Type Row Layout */
+        .farming-row {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            background-color: #333; /* Dark background for each farming row */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards; /* Fade-in animation with upward motion */
+        }
+
+        /* Fade-in and Upward Motion */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .farming-row:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Farming Card Image */
+        .farming-image {
+            width: 40%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Farming Card Content */
+        .farming-content {
+            width: 60%;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .farming-content h2 {
+            color: #e76f51;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .farming-content p {
+            color: #f1f1f1;
+            font-size: 1.7em;
+            margin-bottom: 20px;
+        }
+
+        /* Hover effect on images */
+        .farming-image:hover {
+            transform: scale(1.05); /* Slight zoom on image hover */
+        }
+
+        @media (max-width: 768px) {
+            .farming-row {
+                flex-direction: column;
+            }
+
+            .farming-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .farming-content {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .farming-content h2 {
+                text-align: center;
+            }
+
+            .farming-content p {
+                text-align: justify;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Types of Farming Section -->
+    <section class="farming-section">
+        <h1>Types of Farming</h1>
+
+        <!-- Type 1: Subsistence Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://thecooperator.news/wp-content/uploads/2018/08/sub.gif" alt="Subsistence Farming"
+                class="farming-image">
+            <div class="farming-content">
+                <h2>Subsistence Farming</h2>
+                <p>Subsistence farming is a type of agriculture where farmers grow food crops primarily to meet the needs of their family or local community. It involves small-scale farming using traditional tools and methods, with little to no surplus for trade. This farming method is common in developing countries and is often practiced in areas with low rainfall, poor soil, and limited access to technology. Subsistence farmers typically grow a variety of crops, such as grains, vegetables, and fruits, alongside raising livestock to support their households. The crops produced are primarily for consumption, with little surplus available for the market. In some cases, farmers may trade excess crops in local markets, but this is not the primary goal. Over time, subsistence farming has become more challenging due to environmental changes and the spread of modern farming techniques.</p>
+            </div>
+        </div>
+
+        <!-- Type 2: Commercial Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://everythingsustainable.com/wp-content/uploads/2020/06/01_organic_farming_i8860_20181003_11260.adapt_.1900.1.jpg"
+                alt="Commercial Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Commercial Farming</h2>
+                <p>Commercial farming focuses on the large-scale production of crops and livestock intended for sale in the market. Farmers adopt modern technology, advanced irrigation systems, and mechanized equipment to maximize output and profits. This method is prevalent in developed nations and regions with high productivity and access to global markets. Crops like wheat, rice, cotton, and livestock like cattle are raised in commercial farming. It plays a key role in the global food supply chain. Commercial farming is often conducted on large estates or farms where technology and industrial methods are employed to maximize yield. The farming process typically involves extensive use of fertilizers, herbicides, and pesticides, which allow for high crop productivity. However, the environmental impact of such practices, such as soil degradation, water pollution, and loss of biodiversity, has raised concerns in recent years.</p>
+            </div>
+        </div>
+
+        <!-- Type 3: Organic Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://www.orchardtech.com.au/wp-content/uploads/2021/10/824x465-162-768x433.png"
+                alt="Organic Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Organic Farming</h2>
+                <p>Organic farming is an agricultural method that avoids the use of synthetic fertilizers, pesticides, and genetically modified organisms (GMOs). Instead, it focuses on using natural processes, such as crop rotation, composting, and biological pest control. This type of farming promotes environmental sustainability and aims to produce food in a way that conserves biodiversity, improves soil fertility, and reduces pollution. Organic products are highly sought after by health-conscious consumers around the world. Organic farming methods include the use of green manure, compost, and the promotion of biodiversity through the integration of livestock and crop rotation systems. Though organic farming often yields less than conventional farming methods, it is seen as more sustainable and ecologically friendly. The increase in consumer demand for organic produce has led to a rise in organic farming practices across the globe, particularly in developed countries.</p>
+            </div>
+        </div>
+
+        <!-- Type 4: Intensive Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://greentumble.com/wp-content/uploads/2016/09/Advantages-and-Disadvantages-of-Intensive-Fruit-Farming.jpg"
+                alt="Intensive Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Intensive Farming</h2>
+                <p>Intensive farming, also known as industrial agriculture, is a high-input, high-output system where farmers use large amounts of chemical fertilizers, pesticides, and mechanized tools to maximize yield on limited land. Common in both crop and livestock production, this method is designed to increase efficiency and output. However, it often raises environmental concerns, such as soil depletion, water pollution, and greenhouse gas emissions. Intensive farming is widely used in the production of crops like corn, soybeans, and wheat, as well as in large-scale animal farming. The intensive use of chemicals in this type of farming can result in serious environmental consequences, including soil erosion, water contamination, and the destruction of natural habitats. Despite these issues, intensive farming remains a dominant method for meeting the global demand for food and livestock products.</p>
+            </div>
+        </div>
+
+        <!-- Type 5: Shifting Cultivation (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://www.pkfeyerabend.org/wp-content/uploads/2019/10/shifting-cultivation-2.jpg"
+                alt="Shifting Cultivation" class="farming-image">
+            <div class="farming-content">
+                <h2>Shifting Cultivation</h2>
+                <p>Shifting cultivation is a traditional farming practice where farmers clear a plot of land, use it for a few years until its fertility declines, and then move on to a new area. This method is typically used in tropical regions with dense forests. The cleared land is usually burned in a process called "slash-and-burn," which provides nutrients to the soil. While it can be sustainable in low-population areas, shifting cultivation can lead to deforestation and soil erosion when used on a large scale. Farmers often rely on indigenous knowledge to determine when to move on to new plots. However, shifting cultivation is being challenged due to population pressure, leading to reduced land availability and increasing deforestation. In some cases, shifting cultivation is being replaced by more intensive farming methods, which can result in long-term environmental damage.</p>
+            </div>
+        </div>
+
+        <!-- Type 6: Agroforestry (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://grocycle.com/wp-content/uploads/2020/01/agroforestry-farm-1024x512.jpg"
+                alt="Agroforestry" class="farming-image">
+            <div class="farming-content">
+                <h2>Agroforestry</h2>
+                <p>Agroforestry is an integrated approach to farming that combines the cultivation of crops and trees in the same area. This method aims to achieve a balance between agricultural productivity and environmental sustainability. Agroforestry systems can include practices such as alley cropping, windbreaks, and forest farming. The inclusion of trees helps to enhance biodiversity, reduce soil erosion, and improve water retention in the soil. Agroforestry also provides additional sources of income through the sale of timber, fruits, nuts, and other tree-based products. This method of farming has grown in popularity as a way to combat deforestation, improve soil fertility, and increase farm resilience to climate change. Agroforestry is widely practiced in both developed and developing countries, offering farmers diverse opportunities for sustainable land use and production.</p>
+            </div>
+        </div>
+
+        <!-- Type 7: Precision Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://th.bing.com/th/id/OIP.XNl28xNSyRSgHDEkj5DyWwAAAA?rs=1&pid=ImgDetMain"
+                alt="Precision Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Precision Farming</h2>
+                <p>Precision farming, also known as precision agriculture, utilizes advanced technology, including GPS, drones, sensors, and data analytics, to optimize crop yields and resource use. It involves closely monitoring various factors such as soil moisture, temperature, and crop health to make informed decisions on irrigation, fertilization, and pest management. This technique helps to reduce waste and increase efficiency, making farming more sustainable and profitable. Precision farming has revolutionized modern agriculture by providing farmers with real-time data and insights, enabling them to manage their fields more effectively. By minimizing resource input and maximizing output, precision farming is a key practice for sustainable agriculture in the 21st century. The adoption of precision farming techniques is increasing globally, particularly in regions where high-tech agriculture is a priority.</p>
+            </div>
+        </div>
+
+        <!-- Type 8: Vertical Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://cdn.wikifarmer.com/wp-content/uploads/2022/12/WHAT-IS-VERTICAL-FARMING-1536x1025.jpg"
+                alt="Vertical Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Vertical Farming</h2>
+                <p>Vertical farming is a modern agricultural method that involves growing crops in stacked layers, often in controlled indoor environments. This technique maximizes the use of space, especially in urban areas where land is limited. Vertical farming systems use hydroponics, aeroponics, and other soil-less farming techniques to grow plants efficiently. These systems are equipped with LED lighting and climate control technologies to optimize plant growth. Vertical farming is considered a sustainable solution for feeding growing urban populations, as it reduces the need for large tracts of land and minimizes the environmental impact of traditional farming. It also has the potential to reduce water usage and pesticide dependency, as crops are grown in a controlled, clean environment. Vertical farming is still relatively new, but its popularity is growing rapidly in cities around the world.</p>
+            </div>
+        </div>
+
+        <!-- Type 9: Aquaponics (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://www.housedigest.com/img/gallery/15-edible-plants-perfect-for-aquaponics/intro-1660120747.jpg"
+                alt="Aquaponics" class="farming-image">
+            <div class="farming-content">
+                <h2>Aquaponics</h2>
+                <p>Aquaponics is a sustainable farming system that combines aquaculture (fish farming) with hydroponics (soil-less plant farming) to create a mutually beneficial relationship between fish and plants. In this system, fish waste provides nutrients for plants, and the plants help filter and purify the water for the fish. Aquaponics systems are often used in urban agriculture and are ideal for regions with limited space and water resources. They offer a sustainable way to produce both fish and vegetables without the need for synthetic fertilizers. Aquaponics also reduces water usage compared to traditional farming methods. This method is gaining popularity due to its low environmental footprint and high resource efficiency, making it a promising solution for urban food production and sustainable agriculture.</p>
+            </div>
+        </div>
+
+        <!-- Type 10: Greenhouse Farming (Row Layout) -->
+        <div class="farming-row">
+            <img src="https://www.blueflamebiodigesters.com/wp-content/uploads/2022/07/Greenhouse-farming.jpg"
+                alt="Greenhouse Farming" class="farming-image">
+            <div class="farming-content">
+                <h2>Greenhouse Farming</h2>
+                <p>Greenhouse farming is a method of growing crops inside controlled environments to extend the growing season and protect plants from adverse weather conditions. Greenhouses provide optimal growing conditions by controlling temperature, humidity, and light levels, making them suitable for growing a variety of crops, including fruits, vegetables, and flowers. This farming technique enables year-round production, increases crop yields, and reduces the reliance on pesticides and herbicides. Greenhouse farming also allows for the use of advanced growing techniques, such as hydroponics, which can further increase crop production. As climate change and unpredictable weather patterns affect traditional farming methods, greenhouse farming provides a more stable and efficient solution for growing crops in both urban and rural areas.</p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

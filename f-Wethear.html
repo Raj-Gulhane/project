@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Farming Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(120deg, #18303f, #084340);
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            height: 90%;
+            gap: 10%;
+        }
+
+        /* Weather Container Styling */
+        #weather-container {
+            flex: 1.1;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            padding: 90px;
+            text-align: center;
+            animation: fadeInLeft 1.5s ease;
+            transition: transform 0.3s;
+        }
+
+        #weather-container:hover {
+            transform: translateY(-10px);
+        }
+
+        input[type="text"] {
+            width: 85%;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+            outline: none;
+            transition: transform 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background: linear-gradient(120deg, #56ab2f, #a8e063);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(120deg, #78e86a, #56ab2f);
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #weather-details {
+            margin-top: 20px;
+        }
+
+        .weather-detail {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        /* Graph Container Styling */
+        .graph-container {
+            flex: 2;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeInRight 1.5s ease;
+            transition: transform 0.3s;
+        }
+
+        .graph-container:hover {
+            transform: translateY(-10px);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 400px !important;
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Heading Styling */
+        h3{
+          font-size: 1.9rem;
+            margin-top: -30px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        h2 {
+          margin-left: 30%;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Weather Container -->
+        <div id="weather-container">
+            <h3 >Weather Forecast</h2>
+            <div id="weather">
+                <p>Enter a city to get detailed weather information.</p>
+            </div>
+            <input type="text" id="cityInput" placeholder="Enter city name" />
+            <button onclick="fetchWeather()">Get Weather</button>
+            <div id="weather-details"></div>
+        </div>
+
+        <!-- Graph Container -->
+        <div class="graph-container">
+            <h2>Modern Farming Trends</h2>
+            <canvas id="growthChart"></canvas>
+            <canvas id="growthChart2"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = 'f69c41f58bd865b7cb3eb04a32911133';
+
+        async function fetchWeather() {
+            const city = document.getElementById('cityInput').value.trim();
+            if (!city) {
+                alert("Please enter a city name.");
+                return;
+            }
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("City not found");
+                }
+
+                const data = await response.json();
+                displayWeatherData(data);
+            } catch (error) {
+                document.getElementById('weather').innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+
+        function displayWeatherData(data) {
+            const { main, weather, wind, sys, name } = data;
+            const sunrise = new Date(sys.sunrise * 1000).toLocaleTimeString();
+            const sunset = new Date(sys.sunset * 1000).toLocaleTimeString();
+            const country = sys.country;
+
+            document.getElementById('weather-details').innerHTML = `
+                <div class="weather-detail"><strong>City:</strong> ${name}, ${country}</div>
+                <div class="weather-detail"><strong>Weather:</strong> ${weather[0].description}</div>
+                <div class="weather-detail"><strong>Temperature:</strong> ${main.temp}°C (Min: ${main.temp_min}°C, Max: ${main.temp_max}°C)</div>
+                <div class="weather-detail"><strong>Humidity:</strong> ${main.humidity}%</div>
+                <div class="weather-detail"><strong>Wind Speed:</strong> ${wind.speed} m/s</div>
+                <div class="weather-detail"><strong>Sunrise:</strong> ${sunrise}</div>
+                <div class="weather-detail"><strong>Sunset:</strong> ${sunset}</div>
+            `;
+        }
+
+        // Chart Data
+        const ctx1 = document.getElementById('growthChart').getContext('2d');
+        const growthChart1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Modern Farming Adoption (%)',
+                    data: [15, 20, 30, 40, 55, 65, 75, 80, 85, 90],
+                    backgroundColor: 'rgba(46, 134, 193, 0.2)',
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#2E86C1',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Adoption Rate (%)',
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year',
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('growthChart2').getContext('2d');
+        const growthChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Crop Yield Increase (%)',
+                    data: [5, 8, 12, 15, 18, 22, 25, 28, 30, 35],
+                    backgroundColor: 'rgba(0, 204, 102, 0.2)',
+                    borderColor: '#ffffff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Yield Increase (%)',
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year',
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
